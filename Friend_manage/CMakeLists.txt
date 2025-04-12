@@ -1,16 +1,29 @@
+#File CMake chung ca project
 cmake_minimum_required(VERSION 3.30)
 project(Friend_manage)
 
+# CMAKE_CURRENT_SOURCE_DIR: la duong dan den thu muc goc cua Project, noi chua CMakeList.txt chinh cua project
+# CMAKE_CURRENT_LIST_DIR: La duong dan den thu muc chua CMakeLists.txt dang duoc xu ly
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_C_STANDARD 17)
+set(source_file "source/friend.c" "source/gay.c")
 
 #Tao ra file binary ten la main_app trong build
-add_executable(${PROJECT_NAME} "main/main.c")  
+add_executable(${PROJECT_NAME} "main/main.c")   
 
-#Tao thu vien tu friend.c
-add_library(friend STATIC "source/friend.c") 
+#Tao thu vien tu tat ca cac file source  
+add_library(friend_lib STATIC ${source_file}) 
+#Neu chi add 1 source file: 
+#add_library(friend STATIC "source/friend.c")
 
-#Bao gom thu muc chua file header
-target_include_directories(friend PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/) 
+# Them sub-directory de Cmake load thu vien tu folder ben ngoai
+add_subdirectory(remove_friend)
 
-#Lien ket voi thu vien friend vaoo chuong trinh chinh
-target_link_libraries(${PROJECT_NAME} PRIVATE friend) 
+#Bao gom thu muc chua tat ca cac file header (Phai cung ten voi add_library)
+target_include_directories(friend_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include) 
+#Neu chi add 1 header file (luu y ten friend phai trung voi ten tren add_library):
+#target_include_directories(friend PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+#Lien ket thu vien vao chuong trinh chinH (Phai cung ten voi add_library)
+target_link_libraries(${PROJECT_NAME} PRIVATE friend_lib remove_friend) 
