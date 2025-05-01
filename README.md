@@ -14,3 +14,5 @@ File CMake thường được để đặt với tên `CMakeLists.txt`
 ### **✅Cách viết file CMake cho project có thư viện là sub-directories trong project** ###
 
 ### **✅Cách viết file CMake và biên dịch/link cho project khác (không chứa thư viện đó)** ###
+
+### **✅Một vài lệnh cơ bản với pacman (package manager) khi làm việc với MSYS2 trên Windows** ###
