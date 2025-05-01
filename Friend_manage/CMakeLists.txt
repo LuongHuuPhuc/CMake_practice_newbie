@@ -25,5 +25,5 @@ target_include_directories(friend_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 #Neu chi add 1 header file (luu y ten friend phai trung voi ten tren add_library):
 #target_include_directories(friend PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-#Lien ket thu vien vao chuong trinh chinH (Phai cung ten voi add_library)
+#Lien ket thu vien vao chuong trinh chinh (Phai cung ten voi add_library)
 target_link_libraries(${PROJECT_NAME} PRIVATE friend_lib remove_friend) 
