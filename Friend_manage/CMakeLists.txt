@@ -2,8 +2,9 @@
 cmake_minimum_required(VERSION 3.30)
 project(Friend_manage)
 
-# CMAKE_CURRENT_SOURCE_DIR: la duong dan den thu muc goc cua Project, noi chua CMakeList.txt chinh cua project
-# CMAKE_CURRENT_LIST_DIR: La duong dan den thu muc chua CMakeLists.txt dang duoc xu ly
+# CMAKE_CURRENT_LIST_DIR: duong dan den thu muc chua file CMake(bao gom ca .cmake hoac CMakeLists.txt) dang duoc include hoac xu ly
+# CMAKE_CURRENT_SOURCE_DIR: La duong dan den thu muc chua CMakeLists.txt dang duoc xu ly
+# CMAKE_SOURCE_DIR: La chi den thu muc goc cua toan bo chuong trinh
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_C_STANDARD 17)
